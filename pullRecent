@@ -1,6 +1,9 @@
 <?php require_once 'dbconnection.php'; ?>
 
 <?php
+
+echo "test";
+/*
 	header("Access-Control-Allow-Origin: *");
 	// Encodes data from a POST request
     $postdata = file_get_contents("php://input");
@@ -26,5 +29,5 @@
     //Converts the array to a JSON string
     $jsonstring = json_encode($json);
     echo $jsonstring;
-
+*/
 ?>
