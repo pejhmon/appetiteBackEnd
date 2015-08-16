@@ -4,16 +4,16 @@
 echo "1";
 	header("Access-Control-Allow-Origin: *");
 	// Encodes data from a POST request
-    // $postdata = file_get_contents("php://input");
-    // $request = json_decode($postdata);
+    $postdata = file_get_contents("php://input");
+    $request = json_decode($postdata);
     echo "2";
-    $postdata = $_POST("tableName");
+//    $postdata = $_POST("tableName");
 echo "3";
     //Uses said POST data
-//    $table = $request->tableName;
+    $table = $request->tableName;
 
     //Connects to the database and runs the query
-    $sql = "SELECT * FROM " . $postdata;
+    $sql = "SELECT * FROM " . $table;
     $result = sqlsrv_query($sql, $conn);
 
     //Saves the retrieved data as an array
