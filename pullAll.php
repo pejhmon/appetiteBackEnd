@@ -1,7 +1,7 @@
 <?php require_once 'dbconnection.php'; ?>
 
 <?php
-
+	header("Access-Control-Allow-Origin: *");
 	// Encodes data from a POST request
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
