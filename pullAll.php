@@ -13,7 +13,7 @@ echo "3";
 //    $table = $request->tableName;
 
     //Connects to the database and runs the query
-    $sql = "SELECT * FROM " . $postdata
+    $sql = "SELECT * FROM " . $postdata;
     $result = sqlsrv_query($sql, $conn);
 
     //Saves the retrieved data as an array

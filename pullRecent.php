@@ -3,8 +3,8 @@
 <?php
 
 echo "test";
-/*
-	header("Access-Control-Allow-Origin: *");
+
+//	header("Access-Control-Allow-Origin: *");
 	// Encodes data from a POST request
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
@@ -13,7 +13,7 @@ echo "test";
     $table = $request->tableName;
 
     //Connects to the database and runs the query
-    $sql = "SELECT * FROM " . $table . " SORT"
+    $sql = "SELECT * FROM " . $table . " SORT";
     $result = sqlsrv_query($sql, $conn);
 
     //Saves the retrieved data as an array
@@ -29,5 +29,5 @@ echo "test";
     //Converts the array to a JSON string
     $jsonstring = json_encode($json);
     echo $jsonstring;
-*/
+
 ?>
