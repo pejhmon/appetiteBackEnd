@@ -2,7 +2,7 @@
 <?php include 'functions/pull_all_functions.php'; ?>
 
 <?php
-//	header("Access-Control-Allow-Origin: *");
+	header("Access-Control-Allow-Origin: *");
 	// Encodes data from a POST request
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
@@ -46,7 +46,7 @@
     }
 
     $sql = $select . " FROM " . $table . $where . $order;
-    $result = sqlsrv_query($sql, $conn);
+    $result = sqlsrv_query($sql, $conn) or die("Query to pull data failed");
 
     switch ($table) {
         case "foodlist":
@@ -71,6 +71,9 @@
             echo symptomslist($result);
             break;
         case "usersymptomlist":
+            echo usersymptomlist($result);
+            break;
+        case "usersymptommanifest":
             echo usersymptomlist($result);
             break;
         default:

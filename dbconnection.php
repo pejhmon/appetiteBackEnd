@@ -22,5 +22,4 @@
 	}
 
 	session_start();
-	echo "success";
 ?>
