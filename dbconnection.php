@@ -1,5 +1,4 @@
 <?php
-	header("Access-Control-Allow-Origin: *");
 	// REST import
 	$RESTstring = file_get_contents('http://nhs-json.azurewebsites.net');
 	$RESTarray = explode(':::',$RESTstring);
