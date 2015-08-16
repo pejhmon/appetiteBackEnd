@@ -1,12 +1,14 @@
 <?php require_once 'dbconnection.php'; ?>
 
 <?php
+echo "1";
 	header("Access-Control-Allow-Origin: *");
 	// Encodes data from a POST request
     // $postdata = file_get_contents("php://input");
     // $request = json_decode($postdata);
+    echo "2";
     $postdata = $_POST("tableName");
-
+echo "3";
     //Uses said POST data
 //    $table = $request->tableName;
 
