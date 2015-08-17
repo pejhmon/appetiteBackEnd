@@ -11,9 +11,11 @@
     $table = $request->table;
     $type = $request->type;
     $userID = $request->userID;
+    /*
     echo $table;
     echo $type;
     echo $userID;
+    */
 
     $where = "";
     $select = "SELECT *";
@@ -49,7 +51,7 @@
     }
 
     $sql = $select . " FROM " . $table . $where . $order;
-    echo $sql;
+//    echo $sql;
     $result = sqlsrv_query($conn, $sql) or die("Error: query to pull data failed. ");
 
     switch ($table) {

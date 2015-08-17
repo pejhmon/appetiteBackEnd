@@ -16,10 +16,10 @@
 	$connectionOptions = array( "Database"=>$dbname, "UID"=>$serverID, "PWD"=>$serverPassword);
 
 	$conn = sqlsrv_connect($server, $connectionOptions);
-
+/*
 	echo $server;
 	echo $serverID;
-
+*/
 	if($conn == false) {
 	    echo 'Connection failed. ';
 	    die(print_r(sqlsrv_errors(), true));
