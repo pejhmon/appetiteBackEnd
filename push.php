@@ -39,7 +39,7 @@
 
     $sqlinsert = "INSERT INTO " . $table . " (";
     $sqlvalue = ") VALUES (";
-    $sqlend = ");";
+    $sqlend = ")";
 //    INSERT INTO x (cols) VALUES (values)
 
     $error = false;
