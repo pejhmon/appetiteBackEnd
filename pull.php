@@ -49,6 +49,7 @@
     }
 
     $sql = $select . " FROM " . $table . $where . $order;
+    echo "/n".$sql;
     $result = sqlsrv_query($sql, $conn) or die("Error: query to pull data failed. ");
 
     switch ($table) {
