@@ -65,8 +65,8 @@
             $values = "'{$userid}',SYSDATETIME(),'{$symptomtable}','{$symptomid}','{$symptom}','{$rating}','{$comment}'";
             break;
         case "usersymptomlist":
-            $cols = "'userid','datetime','symptom'";
-            $values = "'{$userid}',SYSDATETIME(),'{$symptom}',";
+            $cols = "'userid','symptom'";
+            $values = "'{$userid}','{$symptom}',";
             break;
         default:
             $error = true;
