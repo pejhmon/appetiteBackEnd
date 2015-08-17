@@ -22,8 +22,8 @@
         $password = sha1('vq3%jt'.$password.'s1*v'); 
         
         ///Process the query then redirect if successful
-        $query = "INSERT INTO users (group, password, nhsnumber, dateofbirth, gender, activitylevel, registrationtimestamp) "
-        $query .= "VALUES (0, '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}', SYSDATETIME());";
+        $query = "INSERT INTO users (group, password, nhsnumber, dateofbirth, gender, activitylevel) "
+        $query .= "VALUES (0, '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}');";
         $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed');
         
         echo "success";

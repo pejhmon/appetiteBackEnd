@@ -45,24 +45,24 @@
     $error = false;
     switch ($table) {
         case "userfoodlist":
-            $cols = "'userid','datetime','foodname','edibleproportion','energy_kcal','protein_g','water_g','fat_g'";
-            $values = "'{$userid}',SYSDATETIME(),'{$foodname}','{$edibleproportion}','{$energy_kcal}','{$protein_g}','{$water_g}','{$fat_g}'";
+            $cols = "userid,foodname,edibleproportion,energy_kcal,protein_g,water_g,fat_g";
+            $values = "'{$userid}','{$foodname}','{$edibleproportion}','{$energy_kcal}','{$protein_g}','{$water_g}','{$fat_g}'";
             break;
         case "usermeallist":
-            $cols = "'userid','datetime','mealname','foodtable','foodcode','edibleproportion','foodname','quantity','energy_kcal','protein_g','water_g','fat_g'";
-            $values = "'{$userid}',SYSDATETIME(),'{$mealname}','{$foodtable}','{$foodcode}','{$edibleproportion}','{$foodname}','{$quantity}','{$energy_kcal}','{$protein_g}','{$water_g}','{$fat_g}'";
+            $cols = "userid,mealname,foodtable,foodcode,edibleproportion,foodname,quantity,energy_kcal,protein_g,water_g,fat_g";
+            $values = "'{$userid}','{$mealname}','{$foodtable}','{$foodcode}','{$edibleproportion}','{$foodname}','{$quantity}','{$energy_kcal}','{$protein_g}','{$water_g}','{$fat_g}'";
             break;
         case "userweightmanifest":
-            $cols = "'userid','datetime','weight','swollenfeet','swollenlegs','swollenabdomen'";
-            $values = "'{$userid}',SYSDATETIME(),'{$weight}','{$swollenfeet}','{$swollenlegs}','{$swollenabdomen}'";
+            $cols = "userid,weight,swollenfeet,swollenlegs,swollenabdomen";
+            $values = "'{$userid}','{$weight}','{$swollenfeet}','{$swollenlegs}','{$swollenabdomen}'";
             break;
         case "userfoodmanifest":
-            $cols = "'userid','datetime','foodtable','foodcode','foodname','quantity','edibleproportion','energy_kcal','protein_g','water_g','carbohydrate_g','fat_g','meal'";
-            $values = "'{$userid}',SYSDATETIME(),'{$foodtable}','{$foodcode}','{$foodname}','{$quantity}','{$edibleproportion}','{$energy_kcal}','{$protein_g}','{$water_g}','{$carbohydrate_g}','{$fat_g}','{$meal}'";
+            $cols = "userid,foodtable,foodcode,foodname,quantity,edibleproportion,energy_kcal,protein_g,water_g,carbohydrate_g,fat_g,meal";
+            $values = "'{$userid}','{$foodtable}','{$foodcode}','{$foodname}','{$quantity}','{$edibleproportion}','{$energy_kcal}','{$protein_g}','{$water_g}','{$carbohydrate_g}','{$fat_g}','{$meal}'";
             break;
         case "usersymptommanifest":
-            $cols = "'userid','datetime','symptomtable','symptomid','symptom','rating','comment'";
-            $values = "'{$userid}',SYSDATETIME(),'{$symptomtable}','{$symptomid}','{$symptom}','{$rating}','{$comment}'";
+            $cols = "userid,symptomtable,symptomid,symptom,rating,comment";
+            $values = "'{$userid}','{$symptomtable}','{$symptomid}','{$symptom}','{$rating}','{$comment}'";
             break;
         case "usersymptomlist":
             $cols = "userid,symptom";
