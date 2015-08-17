@@ -50,7 +50,7 @@
 
     $sql = $select . " FROM " . $table . $where . $order;
     echo $sql;
-    $result = sqlsrv_query($sql, $conn) or die("Error: query to pull data failed. ");
+    $result = sqlsrv_query($conn, $sql) or die("Error: query to pull data failed. ");
 
     switch ($table) {
         case "foodlist":

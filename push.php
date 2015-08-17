@@ -73,7 +73,7 @@
     }
 
     $sql = $sqlinsert . $cols . $sqlvalue . $values . $sqlend;
-    $result = sqlsrv_query($sql, $conn) or die("Error: Query to push data failed");
+    $result = sqlsrv_query($conn, $sql) or die("Error: Query to push data failed");
 
     if($error){
         echo "failure";
