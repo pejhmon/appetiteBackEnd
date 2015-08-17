@@ -9,7 +9,7 @@
 
     //Uses said POST data
     $table = $request->table;
-    $userID = $request->userID;
+    $userid = $request->userid;
 
     $foodname = $request->foodname;
     $foodcode = $request->foodcode;
