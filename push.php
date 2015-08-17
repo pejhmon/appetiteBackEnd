@@ -76,6 +76,8 @@
     $result = sqlsrv_query($conn, $sql) or die("Error: Query to push data failed. ");
 
 echo $sql;
+echo $userid;
+echo $symptom;
 
     if($error){
         echo "failure";
