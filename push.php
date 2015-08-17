@@ -66,7 +66,7 @@
             break;
         case "usersymptomlist":
             $cols = "'userid','symptom'";
-            $values = "'{$userid}','{$symptom}',";
+            $values = "'{$userid}','{$symptom}'";
             break;
         default:
             $error = true;
