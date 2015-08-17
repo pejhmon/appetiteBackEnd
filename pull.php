@@ -1,5 +1,5 @@
 <?php require_once 'dbconnection.php'; ?>
-<?php include 'functions/pull_all_functions.php'; ?>
+<?php include 'functions/pull_functions.php'; ?>
 
 <?php
 	header("Access-Control-Allow-Origin: *");
@@ -17,7 +17,7 @@
 
     $where = "";
     $select = "SELECT *";
-    $order = ";";
+    $order = "";
     
     // Check if there are any other conditions
     switch ($type) {
@@ -26,11 +26,11 @@
             break;
         case "recent": 
             $select = "SELECT TOP 1 *";
-            $order = " ORDER BY datetime DESC;";
+            $order = " ORDER BY datetime DESC";
             break;
         case "first": 
             $select = "SELECT TOP 1 *";
-            $order = " ORDER BY datetime ASC;";
+            $order = " ORDER BY datetime ASC";
             break;
         case "today":
             $where = " WHERE DateDiff(d, datetime, SYSDATETIME())=0";
@@ -49,7 +49,7 @@
     }
 
     $sql = $select . " FROM " . $table . $where . $order;
-    echo "/n".$sql;
+    echo $sql;
     $result = sqlsrv_query($sql, $conn) or die("Error: query to pull data failed. ");
 
     switch ($table) {
