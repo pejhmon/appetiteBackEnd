@@ -11,6 +11,9 @@
     $table = $request->table;
     $type = $request->type;
     $userID = $request->userID;
+    echo $table;
+    echo $type;
+    echo $userID;
 
     $where = "";
     $select = "SELECT *";
@@ -33,7 +36,7 @@
             $where = " WHERE DateDiff(d, datetime, SYSDATETIME())=0";
             break;
         default:
-            echo "error";
+            echo "Error: type incorrect. ";
     }
 
     // Check if needs to be filtered by userID
@@ -46,7 +49,7 @@
     }
 
     $sql = $select . " FROM " . $table . $where . $order;
-    $result = sqlsrv_query($sql, $conn) or die("Query to pull data failed");
+    $result = sqlsrv_query($sql, $conn) or die("Error: query to pull data failed. ");
 
     switch ($table) {
         case "foodlist":
@@ -77,6 +80,6 @@
             echo usersymptomlist($result);
             break;
         default:
-            echo "error";
+            echo "Error: data parse failed";
     }
 ?>
