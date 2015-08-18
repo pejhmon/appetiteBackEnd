@@ -73,8 +73,8 @@
         case "userrequirementsmanifest":
             echo userrequirementsmanifest($result);
             break;
-        case "symptomslist":
-            echo symptomslist($result);
+        case "symptomlist":
+            echo symptomlist($result);
             break;
         case "usersymptomlist":
             echo usersymptomlist($result);
