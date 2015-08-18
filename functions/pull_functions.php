@@ -131,7 +131,7 @@
 	    return json_encode($json);
 	}
 
-	function symptomslist($result){
+	function symptomlist($result){
 	    $json = array();
 	    while($row = sqlsrv_fetch_array($result))     
 	    {
