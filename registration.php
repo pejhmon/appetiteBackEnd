@@ -37,7 +37,7 @@
         
         ///Process the query then redirect if successful
         $query = "INSERT INTO users (group, password, nhsnumber, dateofbirth, gender, activitylevel) ";
-        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}')";
+        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}'," . $dateofbirth . ", '{$gender}', '{$activitylevel}')";
         $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed. Query: ' . $query);
         
         echo "success";
