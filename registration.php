@@ -2,6 +2,8 @@
 <?php include 'functions/shared_functions.php'; ?>
 
 <?php
+	header("Access-Control-Allow-Origin: *");
+
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
 
