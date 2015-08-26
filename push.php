@@ -1,5 +1,4 @@
 <?php require_once 'dbconnection.php'; ?>
-<?php include 'functions/pull_all_functions.php'; ?>
 
 <?php
 	header("Access-Control-Allow-Origin: *");
