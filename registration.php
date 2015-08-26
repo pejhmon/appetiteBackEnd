@@ -12,7 +12,8 @@
 //    $nhsnumber = sqlsrv_escape_string($request->nhsnumber);
 	$password = $request->password;
 	$nhsnumber = $request->nhsnumber;
-	$dateofbirth = $request->dateofbirth;
+	// Expects the date in the format 'YYYY-MM-DD:hh:mm:ss'
+	$dateofbirth = date("Y-m-d:H:i:s",$request->dateofbirth);
 	$gender = $request->gender;
     $activitylevel = $request->activitylevel;
 
