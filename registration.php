@@ -7,8 +7,11 @@
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
 
-    $password = sqlsrv_escape_string($request->password);
-    $nhsnumber = sqlsrv_escape_string($request->nhsnumber);
+	$group = $request->group;
+//    $password = sqlsrv_escape_string($request->password);
+//    $nhsnumber = sqlsrv_escape_string($request->nhsnumber);
+	$password = $request->password;
+	$nhsnumber = $request->nhsnumber;
 	$dateofbirth = $request->dateofbirth;
 	$gender = $request->gender;
     $activitylevel = $request->activitylevel;
@@ -25,7 +28,7 @@
         
         ///Process the query then redirect if successful
         $query = "INSERT INTO users (group, password, nhsnumber, dateofbirth, gender, activitylevel) "
-        $query .= "VALUES (0, '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}');";
+        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}');";
         $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed');
         
         echo "success";
