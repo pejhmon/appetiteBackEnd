@@ -14,6 +14,7 @@
 	$nhsnumber = $request->nhsnumber;
 	// Expects the date in the format 'YYYY-MM-DD:hh:mm:ss'
 	$timestamp = $request->dateofbirth;
+	$timestamp .= " 00:00:00";
 	$timestamp = DateTime::createFromFormat('Y-m-d', $timestamp);
 //	echo $timestamp->format('Y-m-d H:i:s');
 //	$date = $request->dateofbirth;
