@@ -17,7 +17,7 @@
     $activitylevel = $request->activitylevel;
 
 
-    $sql = "SELECT * FROM users WHERE nhsnumber = '" . $nhsnumber;
+    $sql = "SELECT * FROM users WHERE nhsnumber = '" . $nhsnumber . "'";
     $nhsnumbercheck = sqlsrv_query($conn, $sql) or die("Error: Query to check if nhsnumber exists failed");
 
     if(!null == (sqlsrv_fetch_array($usernameCheck))){
