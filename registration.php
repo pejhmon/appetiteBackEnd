@@ -17,7 +17,7 @@
     $activitylevel = $request->activitylevel;
 
 
-    $sql = "SELECT * FROM users WHERE nhsnumber = '" . $nhsnumber . "';";
+    $sql = "SELECT * FROM users WHERE nhsnumber = '" . $nhsnumber;
     $nhsnumbercheck = sqlsrv_query($conn, $sql) or die("Error: Query to check if nhsnumber exists failed");
 
     if(!null == (sqlsrv_fetch_array($usernameCheck))){
@@ -28,7 +28,7 @@
         
         ///Process the query then redirect if successful
         $query = "INSERT INTO users (group, password, nhsnumber, dateofbirth, gender, activitylevel) ";
-        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}');";
+        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}')";
         $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed. Query: ' . $query);
         
         echo "success";
