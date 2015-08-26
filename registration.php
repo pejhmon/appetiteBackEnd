@@ -13,7 +13,7 @@
 	$password = $request->password;
 	$nhsnumber = $request->nhsnumber;
 	// Expects the date in the format 'YYYY-MM-DD:hh:mm:ss'
-	$dateofbirth = date("Y-m-d:H:i:s",$request->dateofbirth);
+	$dateofbirth = date("Y-m-d:H:i:s",$request->dateofbirth.":00:00:00");
 	$gender = $request->gender;
     $activitylevel = $request->activitylevel;
 
