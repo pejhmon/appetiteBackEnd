@@ -20,7 +20,7 @@
 
 
     $sql = "SELECT * FROM users WHERE nhsnumber = '" . $nhsnumber . "'";
-    $nhsnumbercheck = sqlsrv_query($conn, $sql) or die("Error: Query to check if nhsnumber exists failed");
+    $nhsnumbercheck = sqlsrv_query($conn, $sql) or die(errorparse("Error: Query to check if nhsnumber exists failed"));
 
     if(!null == (sqlsrv_fetch_array($nhsnumbercheck))){
         echo errorparse("failure");
@@ -31,7 +31,7 @@
         ///Process the query then redirect if successful
         $query = "INSERT INTO users (admin, password, nhsnumber, dateofbirth, gender, activitylevel) ";
         $query .= "VALUES ('{$admin}', '{$password}', '{$nhsnumber}', CONVERT(datetime2,'{$dateofbirth}',120), '{$gender}', '{$activitylevel}')";
-        $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed. Query: ' . $query);
+        $result = sqlsrv_query($conn, $query) or die (errorparse('Error: Query to insert new user failed. Query: '));
         
         echo errorparse("success");
     }
