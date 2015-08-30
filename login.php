@@ -18,15 +18,11 @@
     $result = sqlsrv_query($conn, $sql) or die(errorparse("Error: query to check if login details are correct failed"));
 
     if(!null == (sqlsrv_fetch_array($result))){
-        
-        echo "success. ID = ";
         $query  = "SELECT * FROM users WHERE nhsnumber = '". $nhsnumber . "'";
-        $result2 = sqlsrv_query($conn, $query) or die("Query failed");
+        $result2 = sqlsrv_query($conn, $query) or die(errorparse("Query failed"));
         while($row = sqlsrv_fetch_array($result2)){
-            echo "test = ";
-            echo $row['id'];
+            echo errorparse($row['id']);
         }
-        echo ". success";
     }else{
         echo errorparse("failure");
     }
