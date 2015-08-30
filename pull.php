@@ -1,5 +1,6 @@
 <?php require_once 'dbconnection.php'; ?>
 <?php include 'functions/pull_functions.php'; ?>
+<?php include 'functions/shared_functions.php'; ?>
 
 <?php
 	header("Access-Control-Allow-Origin: *");
@@ -11,11 +12,6 @@
     $table = $request->table;
     $type = $request->type;
     $userID = $request->userID;
-    /*
-    echo $table;
-    echo $type;
-    echo $userID;
-    */
 
     $where = "";
     $select = "SELECT *";
@@ -51,8 +47,7 @@
     }
 
     $sql = $select . " FROM " . $table . $where . $order;
-//    echo $sql;
-    $result = sqlsrv_query($conn, $sql) or die("Error: query to pull data failed. ");
+    $result = sqlsrv_query($conn, $sql) or die(errorparse("Error: query to pull data failed"));
 
     switch ($table) {
         case "foodlist":
@@ -83,6 +78,6 @@
             echo usersymptomlist($result);
             break;
         default:
-            echo "Error: data parse failed";
+            echo errorparse("Error: data parse failed");
     }
 ?>
