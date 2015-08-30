@@ -21,7 +21,11 @@
         
         echo "success. ID = ";
         while($row = sqlsrv_fetch_array($result)){
-            print_r ($row);
+            echo "test" = ;
+            echo $row["id"];
+            echo ". test2 = ";
+            echo "$row["id"]";
+            
         }
         echo ". success";
     }else{
