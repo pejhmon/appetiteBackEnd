@@ -7,8 +7,10 @@
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
 
-    $password = sqlsrv_escape_string($request->password);
-    $nhsnumber = sqlsrv_escape_string($request->nhsnumber);
+//    $password = sqlsrv_escape_string($request->password);
+//    $nhsnumber = sqlsrv_escape_string($request->nhsnumber);
+    $password = $request->password;
+    $nhsnumber = $request->nhsnumber;
 
     $password = sha1('vq3%jt'.$password.'s1*v');
 
