@@ -24,7 +24,7 @@
             echo "test" = ;
             echo $row["id"];
             echo ". test2 = ";
-            echo "$row["id"]";
+            echo "$row['id']";
             
         }
         echo ". success";
