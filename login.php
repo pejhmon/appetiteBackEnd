@@ -21,7 +21,7 @@
         echo "failure";
     }else{
         while($row = sqlsrv_fetch_array($result)){
-            $_SESSION ['id'] => $row['id'];
+            $_SESSION ['id'] = $row['id'];
         }
         echo $_SESSION ['id'];
     }
