@@ -21,9 +21,7 @@
         
         echo "success. ID = ";
         while($row = sqlsrv_fetch_array($result)){
-            foreach ($row as $columnName => $columnData) {
-                echo 'Column name: ' . $columnName . ' Column data: ' . $columnData . '. ';
-            }
+            print_r ($row);
         }
         echo ". success";
     }else{
