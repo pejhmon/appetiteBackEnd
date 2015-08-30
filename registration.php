@@ -12,17 +12,9 @@
 //    $nhsnumber = sqlsrv_escape_string($request->nhsnumber);
 	$password = $request->password;
 	$nhsnumber = $request->nhsnumber;
-	// Expects the date in the format 'YYYY-MM-DD:hh:mm:ss'
-	$timestamp = $request->dateofbirth;
-	$timestamp .= "T00:00:00";
-	echo $timestamp . ". ";
-	$dateofbirth = $timestamp;
-//	$timestamp = DateTime::createFromFormat('Y-m-d', $timestamp);
-//	echo $timestamp . ". ";
-//	echo $timestamp->format('Y-m-d H:i:s');
-//	$date = $request->dateofbirth;
-//	echo $date;
-//	$dateofbirth = date("Y-m-d",$timestamp);
+	// Expects the date in the format 'YYYY-MM-DD'
+	$dateofbirth = $request->dateofbirth;
+	$dateofbirth .= "T00:00:00";
 	$gender = $request->gender;
     $activitylevel = $request->activitylevel;
 
