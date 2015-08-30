@@ -20,7 +20,7 @@
     if(!null == (sqlsrv_fetch_array($result))){
         
         echo "success. ID = ";
-        $query  = "SELECT * FROM users";
+        $query  = "SELECT * FROM users WHERE nhsnumber = '". $nhsnumber . "'";
         $result2 = sqlsrv_query($conn, $query) or die("Query failed");
         while($row = sqlsrv_fetch_array($result2)){
             echo "test = ";
