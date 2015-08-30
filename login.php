@@ -14,7 +14,7 @@
 
     $password = sha1('vq3%jt'.$password.'s1*v');
 
-    $sql = "SELECT * FROM users WHERE nhsnumber = '{$nhsnumber}'' AND password = '{$password}'";
+    $sql = "SELECT * FROM users WHERE nhsnumber = '{$nhsnumber}' AND password = '{$password}'";
     $result = sqlsrv_query($conn, $sql) or die("Error: query to check if login details are correct failed");
 
     if(!null == (sqlsrv_fetch_array($result))){
