@@ -21,9 +21,9 @@
         echo "success. ID = ";
         $userarray = array();
         while($row = sqlsrv_fetch_array($result)){
-            $userarray[] = array ( 'id' => $row['id'] );
+            $userarray[] = array ($row['id']);
         }
-        echo $userarray['id'] . ". success";
+        echo $userarray[0] . ". success";
     }else{
         echo "failure";
     }
