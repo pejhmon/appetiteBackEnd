@@ -18,13 +18,12 @@
     $result = sqlsrv_query($conn, $sql) or die("Error: query to check if login details are correct failed");
 
     if(!null == (sqlsrv_fetch_array($result))){
-        /*
+        echo "success. ID = "
+        
         while($row = sqlsrv_fetch_array($result)){
-            $_SESSION ['id'] = $row['id'];
+            echo $row['id'];
         }
-        echo $_SESSION ['id'];
-        */
-        echo "success";
+        echo ". success";
     }else{
         echo "failure";
     }
