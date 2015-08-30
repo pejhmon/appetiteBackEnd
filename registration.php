@@ -22,7 +22,7 @@
     $sql = "SELECT * FROM users WHERE nhsnumber = '" . $nhsnumber . "'";
     $nhsnumbercheck = sqlsrv_query($conn, $sql) or die("Error: Query to check if nhsnumber exists failed");
 
-    if(!null == (sqlsrv_fetch_array($usernameCheck))){
+    if(!null == (sqlsrv_fetch_array($nhsnumbercheck))){
         echo "failure";
     }else{            
         /// Hash and salt the password
