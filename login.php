@@ -15,16 +15,15 @@
     $password = sha1('vq3%jt'.$password.'s1*v');
 
     $sql = "SELECT * FROM users WHERE nhsnumber = '{$nhsnumber}' AND password = '{$password}'";
-    $result = sqlsrv_query($conn, $sql) or die("Error: query to check if login details are correct failed");
+    $result = sqlsrv_query($conn, $sql) or die(errorparse("Error: query to check if login details are correct failed"));
 
     if(!null == (sqlsrv_fetch_array($result))){
         echo "success. ID = ";
-        $userarray = array();
         while($row = sqlsrv_fetch_array($result)){
-            $userarray[] = array ($row['id']);
+            echo $row['id'];
         }
-        echo $userarray[0] . ". success";
+        echo ". success";
     }else{
-        echo "failure";
+        echo errorparse("failure");
     }
 ?>
