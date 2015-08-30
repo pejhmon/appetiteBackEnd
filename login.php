@@ -19,11 +19,11 @@
 
     if(!null == (sqlsrv_fetch_array($result))){
         echo "success. ID = ";
-        
+        $userarray = array();
         while($row = sqlsrv_fetch_array($result)){
-            echo $row['id'];
+            $userarray[] = array ( 'id' => $row['id'] );
         }
-        echo ". success";
+        echo $userarray['id'] . ". success";
     }else{
         echo "failure";
     }
