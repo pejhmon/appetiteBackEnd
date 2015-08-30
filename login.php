@@ -17,11 +17,14 @@
     $sql = "SELECT * FROM users WHERE nhsnumber = '{$nhsnumber}' AND password = '{$password}'";
     $result = sqlsrv_query($conn, $sql) or die("Error: query to check if login details are correct failed");
 
-    if(null == (sqlsrv_fetch_array($result))){
+    if(!null == (sqlsrv_fetch_array($result))){
+        /*
         while($row = sqlsrv_fetch_array($result)){
             $_SESSION ['id'] = $row['id'];
         }
         echo $_SESSION ['id'];
+        */
+        echo "success";
     }else{
         echo "failure";
     }
