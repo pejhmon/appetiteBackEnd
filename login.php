@@ -18,11 +18,12 @@
     $result = sqlsrv_query($conn, $sql) or die(errorparse("Error: query to check if login details are correct failed"));
 
     if(!null == (sqlsrv_fetch_array($result))){
-        echo $nhsnumber . ". ";
-        echo $password . ". ";
+        
         echo "success. ID = ";
         while($row = sqlsrv_fetch_array($result)){
-            echo $row['id'];
+            foreach ($row as $columnName => $columnData) {
+                echo 'Column name: ' . $columnName . ' Column data: ' . $columnData . '. ';
+            }
         }
         echo ". success";
     }else{
