@@ -1,4 +1,5 @@
 <?php require_once 'dbconnection.php'; ?>
+<?php include 'functions/shared_functions.php'; ?>
 
 <?php
 	header("Access-Control-Allow-Origin: *");
@@ -73,17 +74,12 @@
 	
     $sql = $sqlinsert . $cols . $sqlvalue . $values . $sqlend;
     
-    
-echo $sql;
-echo $userid;
-echo $symptom;
-    
-    $result = sqlsrv_query($conn, $sql) or die("Error: Query to push data failed. ");
+    $result = sqlsrv_query($conn, $sql) or die(errorparse("Error: Query to push data failed"));
 
 
     if($error){
-        echo "failure";
+        echo errorparse("failure");
     }else{
-        echo "success";
+        echo errorparse("success");
     }
 ?>
