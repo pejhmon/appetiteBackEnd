@@ -23,7 +23,7 @@
     $nhsnumbercheck = sqlsrv_query($conn, $sql) or die("Error: Query to check if nhsnumber exists failed");
 
     if(!null == (sqlsrv_fetch_array($nhsnumbercheck))){
-        echo "failure";
+        echo errorparse("failure");
     }else{            
         /// Hash and salt the password
         $password = sha1('vq3%jt'.$password.'s1*v'); 
@@ -33,6 +33,6 @@
         $query .= "VALUES ('{$admin}', '{$password}', '{$nhsnumber}', CONVERT(datetime2,'{$dateofbirth}',120), '{$gender}', '{$activitylevel}')";
         $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed. Query: ' . $query);
         
-        echo "success";
+        echo errorparse("success");
     }
 ?>
