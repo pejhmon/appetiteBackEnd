@@ -16,12 +16,13 @@
 	$timestamp = $request->dateofbirth;
 	$timestamp .= " 00:00:00";
 	echo $timestamp . ". ";
-	$timestamp = DateTime::createFromFormat('Y-m-d', $timestamp);
-	echo $timestamp . ". ";
+	$dateofbirth = $timestamp;
+//	$timestamp = DateTime::createFromFormat('Y-m-d', $timestamp);
+//	echo $timestamp . ". ";
 //	echo $timestamp->format('Y-m-d H:i:s');
 //	$date = $request->dateofbirth;
 //	echo $date;
-	$dateofbirth = date("Y-m-d",$timestamp);
+//	$dateofbirth = date("Y-m-d",$timestamp);
 	$gender = $request->gender;
     $activitylevel = $request->activitylevel;
 
@@ -37,7 +38,7 @@
         
         ///Process the query then redirect if successful
         $query = "INSERT INTO users (group, password, nhsnumber, dateofbirth, gender, activitylevel) ";
-        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}'," . $dateofbirth . ", '{$gender}', '{$activitylevel}')";
+        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}', CAST ('{$dateofbirth}' AS 20 ), '{$gender}', '{$activitylevel}')";
         $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed. Query: ' . $query);
         
         echo "success";
