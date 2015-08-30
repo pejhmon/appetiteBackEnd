@@ -7,14 +7,14 @@
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
 
-	$group = $request->group;
+	$admin = $request->group;
 //    $password = sqlsrv_escape_string($request->password);
 //    $nhsnumber = sqlsrv_escape_string($request->nhsnumber);
 	$password = $request->password;
 	$nhsnumber = $request->nhsnumber;
 	// Expects the date in the format 'YYYY-MM-DD:hh:mm:ss'
 	$timestamp = $request->dateofbirth;
-	$timestamp .= "T00:00:01";
+	$timestamp .= "T00:00:00";
 	echo $timestamp . ". ";
 	$dateofbirth = $timestamp;
 //	$timestamp = DateTime::createFromFormat('Y-m-d', $timestamp);
@@ -37,8 +37,8 @@
         $password = sha1('vq3%jt'.$password.'s1*v'); 
         
         ///Process the query then redirect if successful
-        $query = "INSERT INTO users (group, password, nhsnumber, dateofbirth, gender, activitylevel) ";
-        $query .= "VALUES ('{$group}', '{$password}', '{$nhsnumber}', '{$dateofbirth}', '{$gender}', '{$activitylevel}')";
+        $query = "INSERT INTO users (admin, password, nhsnumber, dateofbirth, gender, activitylevel) ";
+        $query .= "VALUES ('{$admin}', '{$password}', '{$nhsnumber}', CONVERT(datetime2,'{$dateofbirth}',120), '{$gender}', '{$activitylevel}')";"
         $result = sqlsrv_query($conn, $query) or die ('Error: Query to insert new user failed. Query: ' . $query);
         
         echo "success";
