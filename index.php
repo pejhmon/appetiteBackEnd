@@ -10,6 +10,10 @@
     $check = $request->check;
     
     if ($check == "id"){
-        die(errorparse($_SESSION['id']));
+        if (!isset($_SESSION['id'])){
+            die(errorparse("failure"));
+        }else{
+            die(errorparse($_SESSION['id']));
+        }
     }
 ?>
