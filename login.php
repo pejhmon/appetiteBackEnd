@@ -22,6 +22,8 @@
         $result2 = sqlsrv_query($conn, $query) or die(errorparse("Query failed"));
         while($row = sqlsrv_fetch_array($result2)){
             echo errorparse($row['id']);
+            session_start();
+            $_SESSION['id'] = $row['id'];
         }
     }else{
         echo errorparse("failure");
